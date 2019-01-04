@@ -65,7 +65,15 @@ rm chromedriver_linux64.zip google-chrome*.deb
 
 # Install pip packages
 # Make sure you upload the requirements.txt under /root/
+wget -c https://raw.githubusercontent.com/0xboz/webautoapp/DigitaloceanDebian9Setup/requirements.txt -O requirements.txt
 pip install -r requirements.txt
 
-# Reboot
-reboot
+# Download the test file and see if everything works okay
+wget -c https://raw.githubusercontent.com/0xboz/webautoapp/DigitaloceanDebian9Setup/do_selenium_test.py -O do_selenium_test.py
+chmod +x do_selenium_test.py
+./do_selenium_test.py
+# It should show something like this
+# Breaking News, World News & Multimedia - The New York Times
+
+# Suggest Rebooting
+echo "Reboot the machine and finish the setup."
