@@ -20,6 +20,9 @@ echo '#deb http://ftp.debian.org/debian stretch-backports main' >> /etc/apt/sour
 
 apt update && apt -y upgrade && apt -y autoremove
 
+# Enable cron job log
+sed -i -e 's/#cron/cron/' /etc/rsyslog.conf
+
 # Obtain IP
 IP="$(ifconfig eth0 | grep inet | awk '/[0-9]\./{print $2}')"
 
