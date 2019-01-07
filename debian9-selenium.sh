@@ -78,5 +78,14 @@ chmod +x do_selenium_test.py
 # It should show something like this
 # Breaking News, World News & Multimedia - The New York Times
 
+# Prepare the scripts
+cd ~
+unzip scripts.zip
+
+# Initiate crob job: start the scripts after reboot; the server will reboot every 2 hours.
+cd ~
+crontab cron.txt
+
 # Suggest Rebooting
-echo "Reboot the machine and finish the setup."
+echo "The server is ready."
+echo "Reboot to start the script."
